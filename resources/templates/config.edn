@@ -1,7 +1,8 @@
-{:site-title         "My Awesome Blog"
- :author             "Bob Bobbert"
- :description        "This blog is awesome"
- :site-url           "http://blogawesome.com/"
+{:site-title         "世界本不应该如此复杂!"
+ :subtitle           "- larluo@clojurians.org"
+ :author             "larluo@clojurians.org"
+ :description        "larluo love clojure!"
+ :site-url           "http://blog.clojurians.org/"
  :post-root          "posts"
  :page-root          "pages"
  :post-root-uri      "posts-output"
@@ -14,7 +15,7 @@
  :post-date-format   "yyyy-MM-dd"
  :sass-src           nil
  :sass-dest          nil
- :theme              "blue"
+ :theme              "blue_centered"
  :resources          ["img"]
  :keep-files         [".git"]
  :disqus?            false

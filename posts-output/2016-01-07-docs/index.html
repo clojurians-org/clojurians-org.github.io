@@ -2,8 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
     <meta charset="utf-8"/>
-    <title>My Awesome Blog: Quick Start Guide</title>
-    <link rel="canonical" href="http://blogawesome.com/posts-output/2016-01-07-docs/">
+    <title>世界本不应该如此复杂!: 欢迎大家加入clojurians.org大家庭</title>
+    <link rel="canonical" href="http://blog.clojurians.org/posts-output/2016-01-07-docs/">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='http://fonts.googleapis.com/css?family=Alegreya:400italic,700italic,400,700' rel='stylesheet'
           type='text/css'>
@@ -24,7 +24,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">My Awesome Blog</a>
+            <a class="navbar-brand" href="/">世界本不应该如此复杂!</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
@@ -38,6 +38,42 @@
                 </li>
                 
                 <li><a href="/feed.xml">RSS</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                        More <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li class="dropdown-header">Links</li>
+                        <li><a href="http://cryogenweb.org/docs/home.html">Cryogen Docs</a></li>
+                        <li><a href="http://carmenla.me/blog/archives">Carmen's Blog</a></li>
+                        
+                        <li><a href="/pages-output/another-page/">Another Page</a></li>
+                        
+
+                        
+                        <li class="divider"></li>
+                        <li class="dropdown-header">Recent Posts</li>
+                        
+                        <li><a href="/posts-output/2016-01-07-docs/">欢迎大家加入clojurians.org大家庭</a></li>
+                        
+                        <li><a href="/posts-output/2014-11-04-second-post/">Yet Another Post</a></li>
+                        
+                        <li><a href="/posts-output/2014-03-10-first-post/">A Post</a></li>
+                        
+                        
+
+                        
+                        <li class="divider"></li>
+                        <li class="dropdown-header">Tags</li>
+                        
+                        <li><a href="/tags-output/cryogen/">cryogen</a></li>
+                        
+                        <li><a href="/tags-output/very fetch/">very fetch</a></li>
+                        
+                        <li><a href="/tags-output/not fetch/">not fetch</a></li>
+                        
+                        
+                    </ul>
+                </li>
             </ul>
         </div><!--/.nav-collapse -->
     </div><!--/.container-fluid -->
@@ -48,7 +84,7 @@
 
 
     <div class="row">
-        <div class="col-lg-9">
+        <div class="col-lg-12">
             <div id="content">
                 
 <div id="post">
@@ -57,67 +93,11 @@
         <div class="col-lg-6">January 7, 2016</div>
         
     </div>
-    <h2>Quick Start Guide</h2>
+    <h2>欢迎大家加入clojurians.org大家庭</h2>
 </div>
 <div>
-    <ol class="content"><li><a href="#features">Features</a></li><li><a href="#prerequisites">Prerequisites</a></li><li><a href="#usage">Usage</a></li><ol><li><a href="#creating_a_new_site">Creating a New Site</a></li><li><a href="#running_the_server">Running the Server</a></li><li><a href="#site_configuration">Site Configuration</a></li><li><a href="#switching_between_markdown_and_asciidoc">Switching between Markdown and AsciiDoc</a></li><li><a href="#selecting_a_theme">Selecting a Theme</a></li><li><a href="#customizing_layouts">Customizing Layouts</a></li><li><a href="#code_syntax_highlighting">Code Syntax Highlighting</a></li></ol><li><a href="#deploying_your_site">Deploying Your Site</a></li><li><a href="#some_sites_made_with_cryogen">Some Sites Made With Cryogen</a></li></ol>
-    <p>This intro only documents a subset of Cryogen's features. For additional documentation please see the <a href='http://cryogenweb.org'>cryogen site</a>.</p><h2><a name="features"></a>Features</h2><ul><li>Blog posts and pages with Markdown (default) or AsciiDoc</li><li>Tags</li><li>Table of contents generation</li><li>Plain HTML page templates</li><li>Code syntax highlighting</li><li>Disqus support</li><li>Sitemap generation</li><li>RSS feed generation</li><li>Sass/SCSS compilation</li></ul><h2><a name="prerequisites"></a>Prerequisites</h2><p>You will need <a href='https://github.com/technomancy/leiningen'>Leiningen</a> 2.5.0 or above installed.</p><h2><a name="usage"></a>Usage</h2><h3><a name="creating&#95;a&#95;new&#95;site"></a>Creating a New Site</h3><p>A new site can be created using the Cryogen template as follows:</p><pre><code>lein new cryogen my-blog
-</code></pre><h3><a name="running&#95;the&#95;server"></a>Running the Server</h3><p>The web server can be started from the <code>my-blog</code> directory using the <code>lein-ring</code> plugin:</p><pre><code>lein ring server
-</code></pre><p>The server will watch for changes in the <code>resources/templates</code> folder and recompile the content automatically.</p><h3><a name="site&#95;configuration"></a>Site Configuration</h3><p>The site configuration file is found at <code>templates/config.edn</code>, this file looks as follows:</p><pre><code class="clojure">{:site-title         &quot;My Awesome Blog&quot;
- :author             &quot;Bob Bobbert&quot;
- :description        &quot;This blog is awesome&quot;
- :site-url           &quot;http://blogawesome.com/&quot;
- :post-root          &quot;posts&quot;
- :page-root          &quot;pages&quot;
- :post-root-uri      &quot;posts-output&quot;
- :page-root-uri      &quot;pages-output&quot;
- :tag-root-uri       &quot;tags-output&quot;
- :blog-prefix        &quot;/blog&quot;
- :rss-name           &quot;feed.xml&quot;
- :rss-filters        &#91;&quot;cryogen&quot;&#93;
- :recent-posts       3
- :post-date-format   &quot;yyyy-MM-dd&quot;
- :sass-src           nil
- :sass-dest          nil
- :theme              &quot;blue&quot;
- :resources          &#91;&quot;img&quot;&#93;
- :keep-files         &#91;&quot;.git&quot;&#93;
- :disqus?            false
- :disqus-shortname   &quot;&quot;
- :ignored-files      &#91;#&quot;\.#.&#42;&quot; #&quot;.&#42;\.swp$&quot;&#93;
- :posts-per-page     5
- :blocks-per-preview 2
- :previews?          false
- :clean-urls?        true}
-
-</code></pre><p>For information about each key please see the <a href='http://cryogenweb.org/docs/configuration.html'>"Configuration"</a> portion of the Cryogen documentation site.</p><h3><a name="switching&#95;between&#95;markdown&#95;and&#95;asciidoc"></a>Switching between Markdown and AsciiDoc</h3><p>Cryogen comes with Markdown support as default. If you want to use AsciiDoc instead, open the <code>project.clj</code> in your created blog (e.g. <code>my-blog</code>), and change the line in <code>:dependencies</code> that says <code>cryogen-markdown</code> to <code>cryogen-asciidoc</code>. Instead of looking for files ending in <code>.md</code> in the <code>resources/templates/md</code> directory, the compiler will now look for files ending in <code>.asc</code> in the <code>resources/templates/asc</code> directory.</p><h3><a name="selecting&#95;a&#95;theme"></a>Selecting a Theme</h3><p>The Cryogen template comes with two themes in the <code>resources/templates/themes</code> folder. To change your blog's theme, change the value of the <code>:theme</code> key in <code>config.edn</code>.</p><h3><a name="customizing&#95;layouts"></a>Customizing Layouts</h3><p>Cryogen uses <a href='https://github.com/yogthos/Selmer'>Selmer</a> templating engine for layouts. Please refer to its documentation to see the supported tags and filters for the layouts.</p><p>The layouts are contained in the <code>resources/templates/themes/{theme}/html</code> folder of the project. By default, the <code>base.html</code> layout is used to provide the general layout for the site. This is where you would add static resources such as CSS and JavaScript assets as well as define headers and footers for your site.</p><p>Each page layout should have a name that matches the <code>:layout</code> key in the page metadata and end with <code>.html</code>. Page layouts extend the base layout and should only contain the content relaveant to the page inside the <code>content</code> block. For example, the <code>tag</code> layout is located in <code>tag.html</code> and looks as follows:</p><pre><code class="xml">{% extends &quot;templates/html/layouts/base.html&quot; %}
-{% block content %}
-&lt;div id=&quot;posts-by-tag&quot;&gt;
-    &lt;h2&gt;Posts tagged {{name}}&lt;/h2&gt;
-    &lt;ul&gt;
-    {% for post in posts %}
-        &lt;li&gt;
-            &lt;a href=&quot;{{post.uri}}&quot;&gt;{{post.title}}&lt;/a&gt;
-        &lt;/li&gt;
-    {% endfor %}
-    &lt;/ul&gt;
-&lt;/div&gt;
-{% endblock %}
-</code></pre><h3><a name="code&#95;syntax&#95;highlighting"></a>Code Syntax Highlighting</h3><p>Cryogen uses <a href='https://highlightjs.org/'>Highlight.js</a> for code syntax highlighting. You can add more languages by replacing <code>templates/js/highlight.pack.js</code> with a customized package from <a href='https://highlightjs.org/download/'>here</a>.</p><p>The <code> initHighlightingOnLoad</code> function is called in <code>{theme}/html/base.html</code>.</p><pre><code class="xml">&lt;script&gt;hljs.initHighlightingOnLoad&#40;&#41;;&lt;/script&gt;
-</code></pre><h2><a name="deploying&#95;your&#95;site"></a>Deploying Your Site</h2><p>The generated static content will be found under the <code>resources/public</code> folder. Simply copy the content to a static folder for a server such as Nginx or Apache and your site is now ready for service.</p><p>A sample Nginx configuration that's placed in <code>/etc/nginx/sites-available/default</code> can be seen below:</p><pre><code class="javascript">server {
-  listen 80 default&#95;server;
-  listen &#91;::&#93;:80 default&#95;server ipv6only=on;
-  server&#95;name localhost &lt;yoursite.com&gt; &lt;www.yoursite.com&gt;;
-
-  access&#95;log  /var/log/blog&#95;access.log;
-  error&#95;log   /var/log/blog&#95;error.log;
-
-  location / {
-    alias       /var/blog/;
-    error&#95;page  404 = /404.html;
-  }
-}
-</code></pre><p>Simply set <code>yoursite.com</code> to the domain of your site in the above configuration and ensure the static content is available at <code>/var/blog/</code>. Finally, place your custom error page in the <code>/var/blog/404.html</code> file.</p><p>More information on deployment can be found <a href='http://cryogenweb.org/docs/deploying-to-github-pages.html'>here</a>.</p><h2><a name="some&#95;sites&#95;made&#95;with&#95;cryogen"></a>Some Sites Made With Cryogen</h2><ul><li><a href='http://carmenla.me/blog/index.html'>Creator's blog</a></li><li><a href='http://cryogenweb.org'>Cryogen Documentation Site</a></li><li><a href='http://yogthos.net/'>Yogthos' blog</a></li><li><a href='http://www.clojure.tn'>Clojure :in Tunisia</a></li><li><a href='http://dl1ely.github.io'>dl1ely.github.io</a></li><li><a href='http://jonase.github.io/nil-recur'>nil/recur</a></li><li><a href='http://tangrammer.github.io/'>on the clojure move</a></li><li><a href='http://blog.jethrokuan.com/'>cognizance</a></li><li><a href='http://www.agynamix.de'>AGYNAMIX Site & Blog</a></li><li><a href='http://eresident.me'>e-Resident Me</a></li><li><a href='http://www.chadstovern.com'>Chad Stovern's blog</a></li><li><a href='https://greative.jp/'>Greative</a></li></ul>
+    <ol class="content"><li><a href="#加入clojurians.org">加入clojurians.org</a></li><li><a href="#clojurians.org团队成员">clojurians.org团队成员</a></li><li><a href="#clojurians.org_github">clojurians.org github</a></li><li><a href="#clojurians.org_项目">clojurians.org 项目</a></li><li><a href="#clojurians.org_社区">clojurians.org 社区</a></li></ol>
+    <h2><a name="加入clojurians.org"></a>加入clojurians.org</h2><p>(免费申请[username]@clojurians.org邮箱, 绑定qq邮箱)<br /></p><ol><li>发送邮件至larluo@clojurians.org: 内容包括[qq号]+[username@clojurians.org]</li><li>larluo亲自为您添加账号</li><li>QQ邮箱同意接受邀请邮件完成绑定</li><li>发送邮件在发件人下拉框选取clojurians.org邮箱即可</li></ol><h2><a name="clojurians.org团队成员"></a>clojurians.org团队成员</h2><p>(排名不分先后，按QQ域名邮箱显示顺序列出)<br /></p><ul><li>larluo@clojurians.org (从事大数据开发, 致于力研究storm, onyx, datomic, datalog, 全栈工程师梦想追求者)</li><li>banana@clojurians.org</li><li>issac@clojurians.org</li><li>raincal@clojurians.org</li><li>clj@clojurians.org</li><li>yuanbo@clojurians.org(一熊科技后端开发工程师, clojure开发工程师热招中...)</li><li>doglooksgood@clojurians.org</li><li>lijun@clojurians.org</li><li>tiye@clojurians.org</li></ul><h2><a name="clojurians.org&#95;github"></a>clojurians.org github</h2><p>(http://github.com/clojurians-org)</p><ul><li>clojure emacs环境搭建 [http://github.com/clojurians-org/offline-dev]</li><li>clojure 电子书 [http://github.com/clojurians-org/clojure-ebook]</li><li>clojure 示例 [http://github.com/clojurians-org/clojure-examples]</li></ul><h2><a name="clojurians.org&#95;项目"></a>clojurians.org 项目</h2><ul><li>beyond-flume: 将日志文件抽取至kafka消息队列中，支持断点恢复跟文件翻滚</li><li>beyond-storm: 用clojure重写storm的trident及外部接口库</li><li>cluster-ui: 统一集群管理及监控</li><li>onyx-cookbook: 提供onyx更好的文档</li></ul><h2><a name="clojurians.org&#95;社区"></a>clojurians.org 社区</h2><ul><li>clojure china 论坛 [http://clojure-china.org]</li><li>beary chat 聊天室 [https://clojure.bearychat.com/messages/所有人]</li><li>qq群: 130107204</li></ul>
 </div>
 
 <div id="post-tags">
@@ -142,49 +122,8 @@
 
             </div>
         </div>
-
-        <div class="col-md-3">
-            <div id="sidebar">
-                <h3>Links</h3>
-                <ul id="links">
-                    <li><a href="http://cryogenweb.org/docs/home.html">Cryogen Docs</a></li>
-                    <li><a href="http://carmenla.me/blog/archives">Carmen's Blog</a></li>
-                    
-                    <li><a href="/pages-output/another-page/">Another Page</a></li>
-                    
-                </ul>
-                
-                <div id="recent">
-                    <h3>Recent Posts</h3>
-                    <ul>
-                        
-                        <li><a href="/posts-output/2016-01-07-docs/">Quick Start Guide</a></li>
-                        
-                        <li><a href="/posts-output/2014-11-04-second-post/">Yet Another Post</a></li>
-                        
-                        <li><a href="/posts-output/2014-03-10-first-post/">A Post</a></li>
-                        
-                    </ul>
-                </div>
-                
-                
-                <div id="tags">
-                    <h3>Tags</h3>
-                    <ul>
-                        
-                        <li><a href="/tags-output/cryogen/">cryogen</a></li>
-                        
-                        <li><a href="/tags-output/very fetch/">very fetch</a></li>
-                        
-                        <li><a href="/tags-output/not fetch/">not fetch</a></li>
-                        
-                    </ul>
-                </div>
-                
-            </div>
-        </div>
     </div>
-    <footer>Copyright &copy;  Bob Bobbert
+    <footer>Copyright &copy;  larluo@clojurians.org
         <p style="text-align: center;">Powered by <a href="http://cryogenweb.org">Cryogen</a></p></footer>
 </div>
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
@@ -193,3 +132,4 @@
 <script>hljs.initHighlightingOnLoad();</script>
 </body>
 </html>
+
